@@ -3,8 +3,18 @@ const express = require('express');
 const app = express();
 
 
+const port = 5000
+//cors 오류해결하기위해 쓰는것
+var cors = require('cors');
+
+
+app.use(cors());
+
+
+
+
 //listen (서버를 띄울 포트 번호, 띄운 후 실행할 코드)
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('listening on 3000');
 });
 
@@ -56,6 +66,7 @@ app.get('/sound/:name',function(req,res){
 
 // 백엔드
 
+//환경변수 에서 필요함 
 require('dotenv').config();
 
 
